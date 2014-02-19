@@ -319,10 +319,6 @@ static void handle_acl_state_changed(void *buf, uint16_t len)
 	bt_bdaddr_t *addr = (bt_bdaddr_t *) ev->bdaddr;
 
 	DBG("state %u", ev->state);
-
-	if (bt_hal_cbacks->acl_state_changed_cb)
-		bt_hal_cbacks->acl_state_changed_cb(ev->status, addr,
-								ev->state);
 }
 
 static void handle_dut_mode_receive(void *buf, uint16_t len)
